@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #f0f2f5;" xmlns="http://javafx.com/javafx/22.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.AdminPostController">
+
+    <children>
+        <!-- Sidebar -->
+        <VBox layoutX="0.0" layoutY="0.0" prefHeight="700.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #dee2e6; -fx-border-width: 1px;">
+            <padding>
+                <Insets left="20.0" top="30.0" />
+            </padding>
+            <children>
+                <!-- Logo -->
+                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@img/logo.png" />
+                    </image>
+                </ImageView>
+
+                <!-- Dashboard Title -->
+                <Label prefHeight="30.0" prefWidth="134.0" style="-fx-padding: 20 0 0 0;" text="Gestion Blog" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI Bold" size="20.0" />
+                    </font>
+                </Label>
+
+                <!-- Button to show Dashboard Admin -->
+                <Button layoutX="10.0" layoutY="100.0" onAction="#showAdminDashboard" prefHeight="21.0" prefWidth="171.0" style="-fx-background-color: #20c997; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 10; -fx-font-weight: bold;" text="Blog" />
+            </children>
+        </VBox>
+
+        <!-- Main content -->
+        <ScrollPane fitToWidth="true" layoutX="250.0" layoutY="20.0" prefHeight="660.0" prefWidth="750.0" style="-fx-background-color: transparent;">
+            <content>
+                <VBox fx:id="postsContainer" spacing="20.0" style="-fx-background-color: transparent;">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+
+        <!-- Header Bar -->
+        <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="80.0" prefWidth="1000.0" style="-fx-background-color: #20c997;">
+            <children>
+                <Label layoutX="160.0" layoutY="22.0" text="Dashboard Admin" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI Bold" size="32.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="63.0" fitWidth="138.0" layoutX="22.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@img/logo.png" />
+                    </image>
+                </ImageView>
+
+                <!-- Add Post Button -->
+
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

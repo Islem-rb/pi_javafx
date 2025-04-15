@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.GestionPost">
+
+    <children>
+
+        <!-- En-tête -->
+        <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="80.0" prefWidth="1200.0" style="-fx-background-color: #20c997;">
+            <children>
+                <Label layoutX="20.0" layoutY="20.0" text="Gestion des Posts" textFill="WHITE">
+                    <font>
+                        <Font name="Segoe UI Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Button layoutX="932.0" layoutY="27.0" mnemonicParsing="false" onAction="#ajouterPost"
+                        style="-fx-background-color: white; -fx-text-fill: #20c997; -fx-font-weight: bold; -fx-background-radius: 20; -fx-padding: 8 16;">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                    Ajouter un Post
+                </Button>
+
+
+
+
+
+
+            </children>
+        </AnchorPane>
+
+        <!-- Barre de recherche et tri -->
+        <HBox layoutX="20.0" layoutY="100.0" spacing="20.0" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <TextField fx:id="searchField" prefWidth="300.0" promptText="Rechercher un post..."
+                           style="-fx-background-radius: 20; -fx-padding: 8 16;" />
+                <ChoiceBox fx:id="sortChoiceBox" prefWidth="200.0"
+                           style="-fx-background-color: #f8f9fa; -fx-border-color: #ced4da; -fx-background-radius: 20; -fx-padding: 6 12;" />
+                <Button fx:id="btnResetSearch" onAction="#resetSearch" text="Réinitialiser"
+                        style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 8 16; -fx-font-weight: bold; -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.1), 4, 0, 2, 2);" />
+            </children>
+        </HBox>
+
+        <!-- Conteneur des posts -->
+        <ScrollPane layoutX="0.0" layoutY="150.0" prefHeight="550.0" prefWidth="1200.0" fitToWidth="true">
+            <content>
+                <FlowPane fx:id="postsContainer" prefWidth="1160.0" hgap="20.0" vgap="20.0" alignment="CENTER" />
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

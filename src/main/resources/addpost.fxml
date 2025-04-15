@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/22.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.AddPostController"
+            style="-fx-background-color: #f8f9fa;">
+
+   <children>
+
+      <!-- Header -->
+      <AnchorPane prefHeight="82.0" prefWidth="700.0" style="-fx-background-color: #20c997;">
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="120.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="160.0" layoutY="22.0" text="Add New Post" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+
+      <!-- Title -->
+      <Label layoutX="100.0" layoutY="110.0" text="Title :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="titleTextField" layoutX="200.0" layoutY="110.0" promptText="Enter the post title"
+                 prefWidth="400.0"
+                 style="-fx-background-radius: 10; -fx-padding: 6 10;" />
+
+      <!-- Description -->
+      <Label layoutX="75.0" layoutY="160.0" text="Description :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="descriptionTextField" layoutX="200.0" layoutY="160.0"
+                prefHeight="120.0" prefWidth="400.0" promptText="Enter description"
+                wrapText="true"
+                style="-fx-background-radius: 10; -fx-padding: 8 12;" />
+
+      <!-- Image -->
+      <Label layoutX="100.0" layoutY="300.0" text="Picture :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblImagePath" layoutX="200.0" layoutY="305.0" textFill="#888" />
+
+      <Button fx:id="btnChooseImage" layoutX="200.0" layoutY="330.0" mnemonicParsing="false"
+              onAction="#choisirImage"
+              text="Choose Image"
+              style="-fx-background-color: #20c997; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 6 16; -fx-font-weight: bold;" />
+
+      <!-- Buttons -->
+      <HBox layoutX="200.0" layoutY="390.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnsave" onAction="#savePost" text="Save"
+                    style="-fx-background-color: #20c997; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 8 20; -fx-font-weight: bold;" />
+            <Button fx:id="btncancel" onAction="#cancel" text="Cancel"
+                    style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 8 20; -fx-font-weight: bold;" />
+         </children>
+      </HBox>
+
+   </children>
+</AnchorPane>
